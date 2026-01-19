@@ -6,11 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naila Noelany</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     html {
       scroll-behavior: smooth;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
 
     .exp-panel {
       display: none;
@@ -117,10 +123,11 @@
     <div class="z-10 reveal active">
       <p class="text-[#4FF6D9] font-mono mb-4 reveal-delay-100">Hello, my name is</p>
       <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tight reveal-delay-200">Naila Noelany.</h1>
-      <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-8 reveal-delay-300">I build solutions through data &
-        strategy.</h2>
-      <p class="max-w-xl mx-auto text-gray-400 mb-10 text-lg reveal-delay-300">
-        An IT Business Analyst specializing in bridging the gap between business needs and technical implementation.
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-400 mb-8 reveal-delay-300 leading-tight">Bridging Business
+        Objectives &<br>Technical Execution.</h2>
+      <p class="max-w-xl mx-auto text-gray-400 mb-10 text-lg reveal-delay-300 font-light">
+        <span class="text-[#4FF6D9] font-semibold">IT Business Analyst</span> <br>
+        Translating user needs into clear, high-quality system requirements.
       </p>
       <div class="flex gap-4 justify-center reveal-delay-300">
         <a href="#projects"
@@ -147,33 +154,30 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
       <!-- Text Content -->
-      <div class="md:col-span-2 space-y-4 text-gray-300 leading-relaxed text-lg">
+      <div class="md:col-span-2 space-y-6 text-gray-300 leading-relaxed text-lg">
         <p>
-          I'm an <span class="text-[#4FF6D9]">IT Business Analyst</span> from Jakarta, Indonesia. I'm experienced in
-          telecommunications, financial services, and consulting.
+          As an <span class="text-[#4FF6D9] font-semibold">IT Business Analyst</span>, I bridge business objectives and
+          technical execution by translating user needs into clear, high-quality system requirements. My work covers
+          end-to-end solution delivery, including user analysis, requirement gathering, solution design, software
+          testing, and UAT.
         </p>
         <p>
-          I combine expertise in <span class="text-white font-semibold">IT Governance, Project Management, and Data
-            Analytics</span> to drive efficiency. My core strength lies in translating complex user needs into strategic
-          technical solutions.
+          Currently at <span class="text-[#4FF6D9]">Jelajah Data Semesta (JDS)</span>, I contribute to delivering IT
+          solutions that are ready for real-world implementation. With experience across Edutech, Telecommunications,
+          Financial Services, and Consulting, I am comfortable navigating diverse business environments.
         </p>
         <p>
-          During my journey, I've had the privilege of working with major companies like
-          <span class="text-[#4FF6D9]">Telkomsel</span>,
-          <span class="text-[#4FF6D9]">Astra Credit Companies</span>,
-          <span class="text-[#4FF6D9]">Zenius Education</span>, and
-          <span class="text-[#4FF6D9]">FED Insight Indonesia</span>.
-        </p>
-        <p>
-          Outside of work, I'm a tech enthusiast who loves following the latest developments in AI and digital trends. I
-          also enjoy winding down with a good movie or series.
+          Recognized as a Kemendikbud-Ristek <span class="text-[#4FF6D9]">“Beasiswa Unggulan” Awardee</span> and an
+          <span class="text-white font-semibold">Information Systems graduate (2024)</span>, I am passionate about
+          continuous learning and have a strong interest in technology, data, and business transformation. I welcome
+          connections with professionals from any industry.
         </p>
       </div>
 
       <!-- Photo -->
       <div class="relative group reveal reveal-delay-200">
-        <div
-          class="relative z-10 border-2 border-[#4FF6D9] rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-300">
+        <div id="profile-photo"
+          class="relative z-10 border-2 border-[#4FF6D9] rounded-xl overflow-hidden grayscale transition-all duration-300">
           <!-- Ganti src dengan path foto Anda, misalnya: "foto-naila.png" -->
           <img src="profile.jpg" alt="Naila Noelany Maharani" class="w-full object-cover" />
         </div>
@@ -351,8 +355,8 @@
           features.
         </p>
         <div class="flex gap-2 flex-wrap">
-          <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Agile</span>
-          <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Jira</span>
+          <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Project Management</span>
+          <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Notion</span>
         </div>
       </div>
 
@@ -550,6 +554,14 @@
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Profile Photo - Permanent color on first hover
+    const profilePhoto = document.getElementById('profile-photo');
+    if (profilePhoto) {
+      profilePhoto.addEventListener('mouseenter', () => {
+        profilePhoto.classList.remove('grayscale');
+      }, { once: true }); // 'once: true' makes this only trigger one time
+    }
   </script>
 </body>
 
