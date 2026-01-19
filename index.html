@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naila Noelany</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .exp-panel {
+        display: none;
+      }
+      .exp-panel.active {
+        display: block;
+      }
+      /* Hero Background Animation */
+      .bg-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(79, 246, 217, 0.15) 0%, rgba(10, 18, 32, 0) 70%);
+        filter: blur(50px);
+        z-index: -1;
+        animation: pulse-glow 5s infinite alternate;
+      }
+      @keyframes pulse-glow {
+        0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
+        100% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+      }
+
+      /* Scroll Reveal Animation Classes */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .reveal-delay-100 { transition-delay: 0.1s; }
+      .reveal-delay-200 { transition-delay: 0.2s; }
+      .reveal-delay-300 { transition-delay: 0.3s; }
+    </style>
+  </head>
+  <body class="bg-[#0a1220] text-white font-sans overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-[#0f1629]/80 backdrop-blur-lg px-8 py-4 flex gap-6 z-50 shadow transition-transform duration-300" id="navbar">
+      <a href="#logo" class="hover:text-[#4FF6D9] font-bold">NAILA</a>
+      <a href="#home" class="hover:text-[#4FF6D9]">Home</a>
+      <a href="#about" class="hover:text-[#4FF6D9]">About</a>
+      <a href="#experience" class="hover:text-[#4FF6D9]">Experience</a>
+      <a href="#projects" class="hover:text-[#4FF6D9]">Projects</a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center px-6 overflow-hidden">
+      <div class="bg-glow"></div>
+      <div class="z-10 reveal active">
+        <p class="text-[#4FF6D9] font-mono mb-4 reveal-delay-100">Hello, my name is</p>
+        <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tight reveal-delay-200">Naila Noelany.</h1>
+        <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-8 reveal-delay-300">I build solutions through data & strategy.</h2>
+        <p class="max-w-xl mx-auto text-gray-400 mb-10 text-lg reveal-delay-300">
+          An IT Business Analyst specializing in bridging the gap between business needs and technical implementation.
+        </p>
+        <div class="flex gap-4 justify-center reveal-delay-300">
+          <a href="#projects" class="px-8 py-3 border border-[#4FF6D9] text-[#4FF6D9] rounded hover:bg-[#4FF6D9]/10 transition-colors">
+            Check out my projects!
+          </a>
+          <a href="#about" class="px-8 py-3 bg-[#4FF6D9] text-[#0a1220] font-bold rounded hover:bg-[#3edbc0] transition-colors">
+            About Me
+          </a>
+        </div>
+      </div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 container mx-auto px-6 max-w-5xl reveal">
+      <h2 class="text-3xl font-bold mb-10 text-[#4FF6D9]">/ about me</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <!-- Text Content -->
+        <div class="md:col-span-2 space-y-4 text-gray-300 leading-relaxed text-lg">
+          <p>
+            I'm an <span class="text-[#4FF6D9]">IT Business Analyst</span> from Jakarta, Indonesia. I'm experienced in telecommunications, financial services, and consulting. 
+          </p>
+          <p>
+            I combine expertise in <span class="text-white font-semibold">IT Governance, Project Management, and Data Analytics</span> to drive efficiency. My core strength lies in translating complex user needs into strategic technical solutions.
+          </p>
+          <p>
+            During my journey, I've had the privilege of working with major companies like 
+            <span class="text-[#4FF6D9]">Telkomsel</span>, 
+            <span class="text-[#4FF6D9]">Astra Credit Companies</span>, 
+            <span class="text-[#4FF6D9]">Zenius Education</span>, and 
+            <span class="text-[#4FF6D9]">FED Insight Indonesia</span>.
+          </p>
+          <p>
+            Outside of work, I'm a tech enthusiast who loves following the latest developments in AI and digital trends. I also enjoy winding down with a good movie or series.
+          </p>
+        </div>
+
+        <!-- Photo -->
+        <div class="relative group reveal reveal-delay-200">
+          <div class="relative z-10 border-2 border-[#4FF6D9] rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-300">
+            <!-- Ganti src dengan path foto Anda, misalnya: "foto-naila.png" -->
+            <img 
+              src="profile.jpg" 
+              alt="Naila Noelany Maharani"
+              class="w-full object-cover"
+            />
+          </div>
+          <!-- Decorative frame -->
+          <div class="absolute top-4 left-4 w-full h-full border-2 border-[#4FF6D9]/30 rounded-xl -z-0 group-hover:top-2 group-hover:left-2 transition-all duration-300"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-20 container mx-auto px-6 max-w-6xl reveal">
+      <h2 class="text-3xl font-bold mb-10 text-[#4FF6D9]">/ experience</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- TABS -->
+        <div class="border-l border-gray-700 flex flex-col">
+          <button class="exp-tab py-3 pl-4 text-left border-l-2 border-transparent hover:text-[#4FF6D9] transition-all" data-exp="jds">Jelajah Data Semesta</button>
+          <button class="exp-tab py-3 pl-4 text-left border-l-2 border-transparent hover:text-[#4FF6D9] transition-all" data-exp="fed">FED Insight Indonesia</button>
+          <button class="exp-tab py-3 pl-4 text-left border-l-2 border-transparent hover:text-[#4FF6D9] transition-all" data-exp="acc">Astra Credit Companies</button>
+          <button class="exp-tab py-3 pl-4 text-left border-l-2 border-transparent hover:text-[#4FF6D9] transition-all" data-exp="telkomsel">Telkomsel</button>
+          <button class="exp-tab py-3 pl-4 text-left border-l-2 border-transparent hover:text-[#4FF6D9] transition-all" data-exp="zenius">Zenius Education</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="md:col-span-3 min-h-[400px]">
+          <!-- JDS -->
+          <div id="exp-jds" class="exp-panel active reveal-delay-100">
+            <h3 class="text-xl font-semibold mb-1">Business Analyst @ <span class="text-[#4FF6D9]">Jelajah Data Semesta</span></h3>
+            <p class="text-gray-400 mb-6">May 2025 — Present</p>
+            <ul class="list-disc pl-6 space-y-4 text-gray-300">
+              <li>Collaborated with stakeholders to gather and document requirements for 7 web and mobile applications across Telecommunications, Smart City, and Logistics.</li>
+              <li>Coordinated cross-functional teams across 11 Agile sprints achieving 100% on-time delivery using Jira and Trello.</li>
+              <li>Created detailed UML diagrams (Use Case, Activity, Sequence) using Figma, Balsamiq, and Visio.</li>
+              <li>Conducted User Acceptance Testing (UAT) and API testing using Chucker and Postman.</li>
+            </ul>
+          </div>
+
+          <!-- FED INSIGHT -->
+          <div id="exp-fed" class="exp-panel">
+            <h3 class="text-xl font-semibold mb-1">Business Analyst Intern @ <span class="text-[#4FF6D9]">FED Insight Indonesia</span></h3>
+            <p class="text-gray-400 mb-6">Jul — Dec 2024</p>
+            <ul class="list-disc pl-6 space-y-4 text-gray-300">
+              <li>Contributed to 7 HR consulting projects for clients like MRT Jakarta, Pertamina, and PGN.</li>
+              <li>Leveraged Excel (Pivot Tables) to generate professional visualization reports.</li>
+              <li>Designed 5 comprehensive organizational charts using Microsoft Visio.</li>
+            </ul>
+          </div>
+
+          <!-- ASTRA CREDIT COMPANIES -->
+          <div id="exp-acc" class="exp-panel">
+            <h3 class="text-xl font-semibold mb-1">Business Development Intern @ <span class="text-[#4FF6D9]">Astra Credit Companies</span></h3>
+            <p class="text-gray-400 mb-6">Jan — Apr 2024</p>
+            <ul class="list-disc pl-6 space-y-4 text-gray-300">
+              <li>Supported the growth of “Setir Kanan” (automotive e-commerce), onboarding 128 merchant partners.</li>
+              <li>Reduced data processing time by 40% through Excel automation.</li>
+            </ul>
+          </div>
+
+          <!-- TELKOMSEL -->
+          <div id="exp-telkomsel" class="exp-panel">
+            <h3 class="text-xl font-semibold mb-1">Retention Customer Management Intern @ <span class="text-[#4FF6D9]">Telkomsel</span></h3>
+            <p class="text-gray-400 mb-6">Aug — Dec 2023</p>
+            <ul class="list-disc pl-6 space-y-4 text-gray-300">
+              <li>Transformed manual reporting into interactive Power BI dashboards, reducing manual workload by 30-50%.</li>
+              <li>Built a Machine Learning model (80% accuracy) for predicting customer package uptake.</li>
+              <li>Utilized Python to identify nearest Optical Distribution Points (ODP) for 73 locations.</li>
+            </ul>
+          </div>
+
+          <!-- ZENIUS -->
+          <div id="exp-zenius" class="exp-panel">
+            <h3 class="text-xl font-semibold mb-1">Videographer Intern @ <span class="text-[#4FF6D9]">Zenius Education</span></h3>
+            <p class="text-gray-400 mb-6">Feb — Jun 2023</p>
+            <ul class="list-disc pl-6 space-y-4 text-gray-300">
+              <li>Contributed to high-quality audiovisual production, managing studio setups and livestream assets.</li>
+              <li>Operated OBS Studio and managed production equipment to ensure smooth broadcasting.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 container mx-auto px-6 max-w-5xl reveal">
+      <div class="flex items-center gap-4 mb-10">
+        <h2 class="text-3xl font-bold text-[#4FF6D9]">/ projects</h2>
+        <div class="h-[1px] bg-gray-700 flex-grow"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- PROJECT 1: BLOOM -->
+        <div class="p-6 bg-[#111a2d] border border-transparent hover:border-[#4FF6D9]/50 rounded-xl shadow group transition-all duration-300 hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-[#0a1220] rounded-lg text-[#4FF6D9]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-[#4FF6D9] transition-colors">BLOOM</h3>
+          <p class="text-xs font-mono text-gray-500 mb-4 uppercase tracking-widest">Productivity App</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Led as Project Manager, creating WBS and managing critical paths for Pomodoro Timer and Habit Tracker features.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Agile</span>
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Jira</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: ANAGATA -->
+        <div class="p-6 bg-[#111a2d] border border-transparent hover:border-[#4FF6D9]/50 rounded-xl shadow group transition-all duration-300 hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-[#0a1220] rounded-lg text-[#4FF6D9]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-[#4FF6D9] transition-colors">ANAGATA</h3>
+          <p class="text-xs font-mono text-gray-500 mb-4 uppercase tracking-widest">Streaming Service</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Conducted user-centered design research for a localized animation platform to enhance reading & viewing UX.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Research</span>
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">UX</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: SEMICOLON -->
+        <div class="p-6 bg-[#111a2d] border border-transparent hover:border-[#4FF6D9]/50 rounded-xl shadow group transition-all duration-300 hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-[#0a1220] rounded-lg text-[#4FF6D9]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-[#4FF6D9] transition-colors">SEMICOLON</h3>
+          <p class="text-xs font-mono text-gray-500 mb-4 uppercase tracking-widest">Mental Health App</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Designed High-Fidelity prototypes and Empathy Maps as UI/UX Designer to simplify health tracking.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Figma</span>
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">UI/UX</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: Performance Dashboards -->
+        <div class="p-6 bg-[#111a2d] border border-transparent hover:border-[#4FF6D9]/50 rounded-xl shadow group transition-all duration-300 hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-[#0a1220] rounded-lg text-[#4FF6D9]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-[#4FF6D9] transition-colors">BI Dashboards</h3>
+          <p class="text-xs font-mono text-gray-500 mb-4 uppercase tracking-widest">Data Visualization</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Transformed static tables into dynamic Power BI dashboards, reducing manual reporting workload by 50%.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Power BI</span>
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Analytics</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: ODP Analysis -->
+        <div class="p-6 bg-[#111a2d] border border-transparent hover:border-[#4FF6D9]/50 rounded-xl shadow group transition-all duration-300 hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-[#0a1220] rounded-lg text-[#4FF6D9]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-[#4FF6D9] transition-colors">ODP Locator</h3>
+          <p class="text-xs font-mono text-gray-500 mb-4 uppercase tracking-widest">Machine Learning</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Implemented K-Nearest Neighbors (KNN) algorithm in Python to identify nearest Optical Distribution Points.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Python</span>
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">KNN</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: Cloundry -->
+        <div class="p-6 bg-[#111a2d] border border-transparent hover:border-[#4FF6D9]/50 rounded-xl shadow group transition-all duration-300 hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <div class="p-3 bg-[#0a1220] rounded-lg text-[#4FF6D9]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:text-[#4FF6D9] transition-colors">Cloundry</h3>
+          <p class="text-xs font-mono text-gray-500 mb-4 uppercase tracking-widest">System Analysis</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Conducted end-to-end System Analysis and UI/UX design for a cloud-based laundry management service.
+          </p>
+          <div class="flex gap-2 flex-wrap">
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">UML</span>
+            <span class="text-[10px] px-2 py-1 bg-[#0a1220] text-gray-400 rounded">Design</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-500 text-sm border-t border-gray-800/50 mt-20">
+      <p>Built by Naila Noelany Maharani.</p>
+      <p>© 2026 All rights reserved.</p>
+    </footer>
+
+    <!-- JS INTERACTIONS & ANIMATIONS -->
+    <script>
+      // Tabs Interaction
+      const tabs = document.querySelectorAll('.exp-tab');
+      const panels = document.querySelectorAll('.exp-panel');
+
+      // Initialize the first tab style
+      tabs[0].classList.add('text-[#4FF6D9]', 'border-[#4FF6D9]');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('text-[#4FF6D9]', 'border-[#4FF6D9]');
+            t.classList.add('border-transparent');
+          });
+
+          panels.forEach(p => p.classList.remove('active'));
+
+          const targetPanel = document.getElementById("exp-" + tab.dataset.exp);
+          if (targetPanel) {
+            targetPanel.classList.add('active');
+            tab.classList.remove('border-transparent');
+            tab.classList.add('text-[#4FF6D9]', 'border-[#4FF6D9]');
+          }
+        });
+      });
+
+      // Scroll Animation (Intersection Observer)
+      const revealElements = document.querySelectorAll('.reveal');
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: "0px"
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+  </body>
+</html>
