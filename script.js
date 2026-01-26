@@ -4,8 +4,7 @@ const menu = document.getElementById('menu');
 
 if (btn && menu) {
   btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('flex');
+    menu.classList.toggle('active');
   });
 }
 
@@ -14,35 +13,55 @@ if (menu) {
   const menuLinks = menu.querySelectorAll('a');
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (!menu.classList.contains('hidden') && window.innerWidth < 768) {
-        menu.classList.add('hidden');
-        menu.classList.remove('flex');
+      if (menu.classList.contains('active') && window.innerWidth < 768) {
+        menu.classList.remove('active');
       }
     });
   });
 }
 
+// Sticky Header - Changes style when scrolling past hero section
+const navbar = document.getElementById('navbar');
+const heroSection = document.getElementById('home');
+
+function updateNavbar() {
+  if (!navbar || !heroSection) return;
+
+  const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+  if (window.scrollY >= heroBottom - 80) {
+    navbar.classList.remove('navbar-hero');
+    navbar.classList.add('navbar-scrolled');
+  } else {
+    navbar.classList.remove('navbar-scrolled');
+    navbar.classList.add('navbar-hero');
+  }
+}
+
+window.addEventListener('scroll', updateNavbar);
+window.addEventListener('load', updateNavbar);
+
 // Tabs Interaction
 const tabs = document.querySelectorAll('.exp-tab');
 const panels = document.querySelectorAll('.exp-panel');
 
-// Initialize the first tab style
-tabs[0].classList.add('text-[#39FF14]', 'border-[#39FF14]');
-
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
+    // Remove active from all tabs
     tabs.forEach(t => {
-      t.classList.remove('text-[#39FF14]', 'border-[#39FF14]');
-      t.classList.add('border-transparent');
+      t.classList.remove('active');
     });
 
+    // Remove active from all panels
     panels.forEach(p => p.classList.remove('active'));
 
+    // Add active to clicked tab
+    tab.classList.add('active');
+
+    // Show corresponding panel
     const targetPanel = document.getElementById("exp-" + tab.dataset.exp);
     if (targetPanel) {
       targetPanel.classList.add('active');
-      tab.classList.remove('border-transparent');
-      tab.classList.add('text-[#39FF14]', 'border-[#39FF14]');
     }
   });
 });
@@ -69,6 +88,6 @@ revealElements.forEach(el => revealObserver.observe(el));
 const profilePhoto = document.getElementById('profile-photo');
 if (profilePhoto) {
   profilePhoto.addEventListener('mouseenter', () => {
-    profilePhoto.classList.remove('grayscale');
+    profilePhoto.style.filter = 'grayscale(0%)';
   }, { once: true }); // 'once: true' makes this only trigger one time
 }
