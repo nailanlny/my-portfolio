@@ -12,20 +12,19 @@
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-hero" id="navbar">
-    <div
-      style="max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+    <div class="navbar-container">
       <!-- Logo -->
       <a href="#home" class="nav-logo">✦</a>
 
       <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="mobile-menu-btn">
+      <button id="menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
         <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
 
       <!-- Menu Links -->
-      <div id="menu" class="nav-menu" style="gap: 2rem; align-items: center;">
+      <div id="menu" class="nav-menu">
         <a href="#about" class="nav-link">About</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#portfolio" class="nav-link">Portfolio</a>
@@ -107,76 +106,74 @@
   <section id="experience" class="section reveal">
     <h2 class="section-title">Experience</h2>
 
-    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
-      <div style="display: grid; grid-template-columns: 200px 1fr; gap: 2rem;">
-        <!-- TABS -->
-        <div class="exp-tabs">
-          <button class="exp-tab active" data-exp="jds">Jelajah Data Semesta</button>
-          <button class="exp-tab" data-exp="fed">FED Insight Indonesia</button>
-          <button class="exp-tab" data-exp="acc">Astra Credit Companies</button>
-          <button class="exp-tab" data-exp="telkomsel">Telkomsel</button>
-          <button class="exp-tab" data-exp="zenius">Zenius Education</button>
+    <div class="exp-container">
+      <!-- TABS -->
+      <div class="exp-tabs">
+        <button class="exp-tab active" data-exp="jds">Jelajah Data Semesta</button>
+        <button class="exp-tab" data-exp="fed">FED Insight Indonesia</button>
+        <button class="exp-tab" data-exp="acc">Astra Credit Companies</button>
+        <button class="exp-tab" data-exp="telkomsel">Telkomsel</button>
+        <button class="exp-tab" data-exp="zenius">Zenius Education</button>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="exp-content">
+        <!-- JDS -->
+        <div id="exp-jds" class="exp-panel active">
+          <h3 class="exp-title">Business Analyst @ <span class="exp-company">Jelajah Data Semesta</span></h3>
+          <p class="exp-date">May 2025 — Present</p>
+          <ul class="exp-list">
+            <li>Collaborated with stakeholders to gather and document requirements for 7 web and mobile applications
+              across Telecommunications, Smart City, and Logistics.</li>
+            <li>Coordinated cross-functional teams across 11 Agile sprints achieving 100% on-time delivery using Jira
+              and Trello.</li>
+            <li>Created detailed UML diagrams (Use Case, Activity, Sequence) using Figma, Balsamiq, and Visio.</li>
+            <li>Conducted User Acceptance Testing (UAT) and API testing using Chucker and Postman.</li>
+          </ul>
         </div>
 
-        <!-- CONTENT -->
-        <div style="min-height: 350px;">
-          <!-- JDS -->
-          <div id="exp-jds" class="exp-panel active">
-            <h3 class="exp-title">Business Analyst @ <span class="exp-company">Jelajah Data Semesta</span></h3>
-            <p class="exp-date">May 2025 — Present</p>
-            <ul class="exp-list">
-              <li>Collaborated with stakeholders to gather and document requirements for 7 web and mobile applications
-                across Telecommunications, Smart City, and Logistics.</li>
-              <li>Coordinated cross-functional teams across 11 Agile sprints achieving 100% on-time delivery using Jira
-                and Trello.</li>
-              <li>Created detailed UML diagrams (Use Case, Activity, Sequence) using Figma, Balsamiq, and Visio.</li>
-              <li>Conducted User Acceptance Testing (UAT) and API testing using Chucker and Postman.</li>
-            </ul>
-          </div>
+        <!-- FED INSIGHT -->
+        <div id="exp-fed" class="exp-panel">
+          <h3 class="exp-title">Business Analyst Intern @ <span class="exp-company">FED Insight Indonesia</span></h3>
+          <p class="exp-date">Jul — Dec 2024</p>
+          <ul class="exp-list">
+            <li>Contributed to 7 HR consulting projects for clients like MRT Jakarta, Pertamina, and PGN.</li>
+            <li>Leveraged Excel (Pivot Tables) to generate professional visualization reports.</li>
+            <li>Designed 5 comprehensive organizational charts using Microsoft Visio.</li>
+          </ul>
+        </div>
 
-          <!-- FED INSIGHT -->
-          <div id="exp-fed" class="exp-panel">
-            <h3 class="exp-title">Business Analyst Intern @ <span class="exp-company">FED Insight Indonesia</span></h3>
-            <p class="exp-date">Jul — Dec 2024</p>
-            <ul class="exp-list">
-              <li>Contributed to 7 HR consulting projects for clients like MRT Jakarta, Pertamina, and PGN.</li>
-              <li>Leveraged Excel (Pivot Tables) to generate professional visualization reports.</li>
-              <li>Designed 5 comprehensive organizational charts using Microsoft Visio.</li>
-            </ul>
-          </div>
+        <!-- ASTRA CREDIT COMPANIES -->
+        <div id="exp-acc" class="exp-panel">
+          <h3 class="exp-title">Business Development Intern @ <span class="exp-company">Astra Credit Companies</span>
+          </h3>
+          <p class="exp-date">Jan — Apr 2024</p>
+          <ul class="exp-list">
+            <li>Supported the growth of "Setir Kanan" (automotive e-commerce), onboarding 128 merchant partners.</li>
+            <li>Reduced data processing time by 40% through Excel automation.</li>
+          </ul>
+        </div>
 
-          <!-- ASTRA CREDIT COMPANIES -->
-          <div id="exp-acc" class="exp-panel">
-            <h3 class="exp-title">Business Development Intern @ <span class="exp-company">Astra Credit Companies</span>
-            </h3>
-            <p class="exp-date">Jan — Apr 2024</p>
-            <ul class="exp-list">
-              <li>Supported the growth of "Setir Kanan" (automotive e-commerce), onboarding 128 merchant partners.</li>
-              <li>Reduced data processing time by 40% through Excel automation.</li>
-            </ul>
-          </div>
+        <!-- TELKOMSEL -->
+        <div id="exp-telkomsel" class="exp-panel">
+          <h3 class="exp-title">Retention Customer Management Intern @ <span class="exp-company">Telkomsel</span></h3>
+          <p class="exp-date">Aug — Dec 2023</p>
+          <ul class="exp-list">
+            <li>Transformed manual reporting into interactive Power BI dashboards, reducing manual workload by 30-50%.
+            </li>
+            <li>Built a Machine Learning model (80% accuracy) for predicting customer package uptake.</li>
+            <li>Utilized Python to identify nearest Optical Distribution Points (ODP) for 73 locations.</li>
+          </ul>
+        </div>
 
-          <!-- TELKOMSEL -->
-          <div id="exp-telkomsel" class="exp-panel">
-            <h3 class="exp-title">Retention Customer Management Intern @ <span class="exp-company">Telkomsel</span></h3>
-            <p class="exp-date">Aug — Dec 2023</p>
-            <ul class="exp-list">
-              <li>Transformed manual reporting into interactive Power BI dashboards, reducing manual workload by 30-50%.
-              </li>
-              <li>Built a Machine Learning model (80% accuracy) for predicting customer package uptake.</li>
-              <li>Utilized Python to identify nearest Optical Distribution Points (ODP) for 73 locations.</li>
-            </ul>
-          </div>
-
-          <!-- ZENIUS -->
-          <div id="exp-zenius" class="exp-panel">
-            <h3 class="exp-title">Videographer Intern @ <span class="exp-company">Zenius Education</span></h3>
-            <p class="exp-date">Feb — Jun 2023</p>
-            <ul class="exp-list">
-              <li>Contributed to high-quality audiovisual production, managing studio setups and livestream assets.</li>
-              <li>Operated OBS Studio and managed production equipment to ensure smooth broadcasting.</li>
-            </ul>
-          </div>
+        <!-- ZENIUS -->
+        <div id="exp-zenius" class="exp-panel">
+          <h3 class="exp-title">Videographer Intern @ <span class="exp-company">Zenius Education</span></h3>
+          <p class="exp-date">Feb — Jun 2023</p>
+          <ul class="exp-list">
+            <li>Contributed to high-quality audiovisual production, managing studio setups and livestream assets.</li>
+            <li>Operated OBS Studio and managed production equipment to ensure smooth broadcasting.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -187,44 +184,40 @@
     <h2 class="section-title">Portfolio</h2>
 
     <div class="portfolio-card">
-      <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;">
-        <div style="display: flex; flex-direction: column; gap: 2rem;">
-          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center;">
-            <!-- PDF Preview -->
-            <div>
-              <iframe src="Naila's Portofolio.pdf" class="portfolio-iframe" title="Naila's Portfolio"></iframe>
-            </div>
+      <div class="portfolio-grid">
+        <!-- PDF Preview -->
+        <div>
+          <iframe src="Naila's Portofolio.pdf" class="portfolio-iframe" title="Naila's Portfolio"></iframe>
+        </div>
 
-            <!-- Description & Buttons -->
-            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-              <div>
-                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">My Complete Portfolio</h3>
-                <p style="color: #666; line-height: 1.6;">
-                  A comprehensive collection of my work, including detailed case studies, project documentation, and
-                  professional achievements.
-                </p>
-              </div>
+        <!-- Description & Buttons -->
+        <div class="portfolio-info">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">My Complete Portfolio</h3>
+            <p style="color: #666; line-height: 1.6;">
+              A comprehensive collection of my work, including detailed case studies, project documentation, and
+              professional achievements.
+            </p>
+          </div>
 
-              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <a href="Naila's Portofolio.pdf" target="_blank" class="btn-primary">
-                  <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                    </path>
-                  </svg>
-                  View Full Portfolio
-                </a>
-                <a href="Naila's Portofolio.pdf" download class="btn-outline">
-                  <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                  </svg>
-                  Download PDF
-                </a>
-              </div>
-            </div>
+          <div class="portfolio-buttons">
+            <a href="Naila's Portofolio.pdf" target="_blank" class="btn-primary">
+              <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+              View Full Portfolio
+            </a>
+            <a href="https://bit.ly/PORTO-NAILA" download class="btn-outline">
+              <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              Download PDF
+            </a>
           </div>
         </div>
       </div>
